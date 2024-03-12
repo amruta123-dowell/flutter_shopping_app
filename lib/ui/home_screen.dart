@@ -1,10 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_shopping_assignment/widgets/cat_selection_widget.dart';
 import 'package:flutter_shopping_assignment/widgets/bottom_nav_bar_widget.dart';
+import 'package:get/get.dart';
 
+import '../controller/home_controller.dart';
 import '../utils/assets.dart';
 
 class HomeScreen extends StatelessWidget {
-  const HomeScreen({super.key});
+  final HomeController controller = Get.put(HomeController());
+  HomeScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -68,13 +72,19 @@ class HomeScreen extends StatelessWidget {
                             color: Color.fromRGBO(156, 68, 0, 1))),
                   ],
                 ),
-                
               ),
+              const CatSelectionWidget()
             ],
           ),
         ),
       ),
-      bottomNavigationBar: BottomNavBarWidget(),
+      bottomNavigationBar: GetBuilder<HomeController>(builder: (controller) {
+        return BottomNavBarWidget(
+            selectedIndex: controller.selectedBottomItem,
+            onChangeItem: (value) {
+              controller.onChangeBottomNavItem(value);
+            });
+      }),
     );
   }
 }
