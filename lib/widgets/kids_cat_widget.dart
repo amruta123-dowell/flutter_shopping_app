@@ -1,8 +1,5 @@
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_shopping_assignment/utils/assets.dart';
-
-import '../controller/home_controller.dart';
 
 class KidsCatWidget extends StatelessWidget {
   final List<String> kidImageList = [
@@ -13,36 +10,34 @@ class KidsCatWidget extends StatelessWidget {
     AssetStrings.kidFiveIcon,
     AssetStrings.kidSixIcon,
   ];
-  final CatType category;
-  KidsCatWidget({super.key, required this.category});
+  final bool enableOtherCategory;
+  KidsCatWidget({super.key, required this.enableOtherCategory});
 
   @override
   Widget build(BuildContext context) {
     return Opacity(
-      opacity: category == CatType.kids ? 1 : 0.1,
-      child: GridView.builder(
+        opacity: enableOtherCategory == false ? 1 : 0.1,
+        child: GridView.count(
+          physics: const NeverScrollableScrollPhysics(),
           shrinkWrap: true,
-          padding: EdgeInsets.zero,
-          itemCount: kidImageList.length,
-          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-            crossAxisCount: 2, // Number of columns
-            crossAxisSpacing: 3, // Spacing between columns
-            mainAxisSpacing: 3, // Spacing between rows
-          ),
-          itemBuilder: ((context, index) {
+          crossAxisCount: 2,
+          mainAxisSpacing: 12,
+          crossAxisSpacing: 12,
+          childAspectRatio: 1.2,
+          scrollDirection: Axis.vertical,
+          children: kidImageList.map((String value) {
             return Container(
-              height: 25,
-              decoration: BoxDecoration(borderRadius: BorderRadius.circular(6)),
-              child: ClipRRect(
-                borderRadius: BorderRadius.circular(6),
-                child: Image.asset(
-                  kidImageList[index],
-                  fit: BoxFit.fill,
-                  height: 25,
-                ),
-              ),
-            );
-          })),
-    );
+                decoration:
+                    BoxDecoration(borderRadius: BorderRadius.circular(6)),
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(6),
+                  child: Image.asset(
+                    value,
+                    fit: BoxFit.fill,
+                    height: 25,
+                  ),
+                ));
+          }).toList(),
+        ));
   }
 }

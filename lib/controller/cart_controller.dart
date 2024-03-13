@@ -8,20 +8,24 @@ class CartController extends GetxController {
 
   @override
   void onInit() {
-    // Initialize the cart items
+    super.onInit();
+
     CartDataModel().initCartItems(cartData);
     _cartList = CartDataModel().cartItemList;
   }
 
+//cart item list
   List<CartItem> get getCartList {
     return _cartList.where((element) => element.quantity != 0).toList();
   }
 
+//Increase the item  quantity
   void incrementQuantity(int index) {
     _cartList[index].quantity = _cartList[index].quantity! + 1;
     update();
   }
 
+//Decrease the item quantity
   void decrementQuantity(int index) {
     _cartList[index].quantity = _cartList[index].quantity! - 1;
     if (_cartList[index].quantity == 0) {
@@ -30,6 +34,7 @@ class CartController extends GetxController {
     update();
   }
 
+//Delete cart item
   void deleteCartItem(int index) {
     _cartList.removeAt(index);
     update();

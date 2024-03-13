@@ -1,7 +1,5 @@
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
+
 import 'package:flutter_shopping_assignment/utils/assets.dart';
 
 class BottomNavBarWidget extends StatelessWidget {
@@ -25,11 +23,6 @@ class BottomNavBarWidget extends StatelessWidget {
     return BottomNavigationBar(
         onTap: onChangeItem,
         type: BottomNavigationBarType.fixed,
-        selectedLabelStyle: const TextStyle(
-          color: Colors.black,
-          fontSize: 14,
-          fontWeight: FontWeight.w400,
-        ),
         currentIndex: selectedIndex,
         items: List.generate(
             4,
@@ -40,6 +33,9 @@ class BottomNavBarWidget extends StatelessWidget {
                         bottomImageList[index]["image"]!,
                         height: 24,
                         width: 24,
+                        color: selectedIndex == index
+                            ? const Color(0XFF9C4400)
+                            : const Color(0XFF727272),
                       ),
                       Text(
                         bottomImageList[index]["label"]!,

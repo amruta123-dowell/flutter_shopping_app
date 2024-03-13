@@ -2,24 +2,27 @@ import 'package:get/get.dart';
 
 class HomeController extends GetxController {
   int selectedBottomItem = 0;
-  CatType category = CatType.kids;
-  @override
-  void onInit() {}
 
+  int selectedIndex = 0;
+  bool isSelectedCat = false;
+
+//To handle Bottom navigation selection changes
   void onChangeBottomNavItem(int index) {
     selectedBottomItem = index;
     update();
   }
 
+//on click image - used to change the opacity of category image.
   selectedCategory(int index) {
-    category = index == 1
-        ? CatType.women
-        : index == 2
-            ? CatType.men
-            : CatType.kids;
+    int tempIndex = index;
+
+    if (selectedIndex != tempIndex) {
+      isSelectedCat = true;
+    } else {
+      isSelectedCat = !isSelectedCat;
+    }
+    selectedIndex = index;
 
     update();
   }
 }
-
-enum CatType { men, women, kids }

@@ -33,7 +33,7 @@ class CartScreen extends StatelessWidget {
         ),
         actions: [
           Padding(
-            padding: const EdgeInsets.only(right: 20),
+            padding: const EdgeInsets.only(right: 16),
             child: Image.asset(
               AssetStrings.cartIcon,
               height: 20,
@@ -82,20 +82,28 @@ class CartScreen extends StatelessWidget {
           InkWell(
             onTap: () {},
             child: Container(
-              width: double.infinity,
-              margin: const EdgeInsets.symmetric(horizontal: 24, vertical: 40),
-              height: 48,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(4),
-                color: const Color(0XFF9C4400),
-              ),
-              alignment: Alignment.center,
-              child: const Text(
-                "Proceed to Checkout",
-                style: TextStyle(
-                    color: Color(0XFFFFFFFF),
-                    fontWeight: FontWeight.w400,
-                    fontSize: 16),
+              decoration: BoxDecoration(boxShadow: [
+                BoxShadow(
+                    color: const Color(0xFF000000).withOpacity(0.04),
+                    blurRadius: 22,
+                    offset: const Offset(0, -6)),
+              ]),
+              padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 20),
+              child: Container(
+                width: double.infinity,
+                height: 48,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(4),
+                  color: const Color(0XFF9C4400),
+                ),
+                alignment: Alignment.center,
+                child: const Text(
+                  "Proceed to Checkout",
+                  style: TextStyle(
+                      color: Color(0XFFFFFFFF),
+                      fontWeight: FontWeight.w400,
+                      fontSize: 16),
+                ),
               ),
             ),
           ),
