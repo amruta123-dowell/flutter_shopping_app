@@ -16,7 +16,7 @@ class CategorySelectionWidget extends StatelessWidget {
         child: Stack(
           children: [
             ListView(
-              padding: EdgeInsets.zero,
+              padding: const EdgeInsets.only(top: 20),
               shrinkWrap: true,
               physics: const NeverScrollableScrollPhysics(),
               children: [
@@ -53,7 +53,8 @@ class CategorySelectionWidget extends StatelessWidget {
             ),
             Align(
               alignment: Alignment.bottomRight,
-              child: SizedBox(
+              child: Container(
+                  padding: const EdgeInsets.only(right: 12, top: 32),
                   width: MediaQuery.sizeOf(context).width - 300 / 2,
                   child: KidsCatWidget(
                     enableOtherCategory: controller.isSelectedCat,

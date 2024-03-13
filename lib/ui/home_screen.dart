@@ -99,9 +99,6 @@ class HomeScreen extends StatelessWidget {
                       ],
                     ),
                   ),
-                  const SizedBox(
-                    height: 20,
-                  ),
                   const CategorySelectionWidget(),
                   const SizedBox(height: 30),
                 ],
