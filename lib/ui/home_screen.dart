@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_shopping_assignment/ui/cart_screen.dart';
 import 'package:flutter_shopping_assignment/widgets/cat_selection_widget.dart';
 import 'package:flutter_shopping_assignment/widgets/bottom_nav_bar_widget.dart';
 import 'package:get/get.dart';
@@ -14,7 +15,10 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: Image.asset(AssetStrings.menuIcon),
+        leading: Image.asset(
+          AssetStrings.menuIcon,
+          height: 20,
+        ),
         title: const Center(
           child: Text(
             "Home",
@@ -24,58 +28,66 @@ class HomeScreen extends StatelessWidget {
         ),
         actions: [
           Padding(
-            padding: const EdgeInsets.only(right: 10),
+            padding: const EdgeInsets.only(right: 20),
             child: InkWell(
-              child: Image.asset(AssetStrings.cartIcon),
+              onTap: () {
+                Get.to(() => CartScreen());
+              },
+              child: Image.asset(
+                AssetStrings.cartIcon,
+                height: 20,
+              ),
             ),
           )
         ],
       ),
-      body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 16),
-        child: SingleChildScrollView(
-          child: Column(
-            children: [
-              Container(
-                height: 2,
-                width: double.infinity,
-                color: const Color.fromARGB(255, 230, 227, 227),
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            Container(
+              padding: const EdgeInsets.symmetric(horizontal: 16),
+              height: 2,
+              width: double.infinity,
+              color: const Color.fromARGB(255, 230, 227, 227),
+            ),
+            Container(
+              padding: const EdgeInsets.symmetric(horizontal: 16),
+              height: 200,
+              margin: const EdgeInsets.only(
+                top: 12,
               ),
-              Container(
-                height: 200,
-                margin: const EdgeInsets.only(
-                  top: 12,
-                ),
-                decoration:
-                    BoxDecoration(borderRadius: BorderRadius.circular(16)),
-                child: Image.asset(AssetStrings.bannerImage),
-              ),
-              const Padding(
-                padding: EdgeInsets.symmetric(horizontal: 8, vertical: 16),
-                child: Row(
-                  children: [
-                    Expanded(
-                      child: Text(
-                        "Trending Collection for you",
-                        style: TextStyle(
-                            fontWeight: FontWeight.w400,
-                            fontSize: 16,
-                            color: Color.fromRGBO(10, 25, 30, 1)),
-                        maxLines: 1,
-                        overflow: TextOverflow.ellipsis,
-                      ),
+              decoration:
+                  BoxDecoration(borderRadius: BorderRadius.circular(16)),
+              child: Image.asset(AssetStrings.bannerImage),
+            ),
+            const Padding(
+              padding: EdgeInsets.symmetric(horizontal: 24, vertical: 16),
+              child: Row(
+                children: [
+                  Expanded(
+                    child: Text(
+                      "Trending Collection for you",
+                      style: TextStyle(
+                          fontWeight: FontWeight.w400,
+                          fontSize: 16,
+                          color: Color.fromRGBO(10, 25, 30, 1)),
+                      maxLines: 1,
+                      overflow: TextOverflow.ellipsis,
                     ),
-                    Text("View all",
-                        style: TextStyle(
-                            fontWeight: FontWeight.w400,
-                            fontSize: 14,
-                            color: Color.fromRGBO(156, 68, 0, 1))),
-                  ],
-                ),
+                  ),
+                  Text("View all",
+                      style: TextStyle(
+                          fontWeight: FontWeight.w400,
+                          fontSize: 14,
+                          color: Color.fromRGBO(156, 68, 0, 1))),
+                ],
               ),
-              const CatSelectionWidget()
-            ],
-          ),
+            ),
+            const CatSelectionWidget(),
+            const SizedBox(
+              height: 30,
+            ),
+          ],
         ),
       ),
       bottomNavigationBar: GetBuilder<HomeController>(builder: (controller) {

@@ -15,4 +15,11 @@ class AssetStrings {
   static const kidFourIcon = "assets/kids_images/kid_four.png";
   static const kidFiveIcon = "assets/kids_images/kid_five.png";
   static const kidSixIcon = "assets/kids_images/kid_six.png";
+  static const cartImgOne = "assets/cart/cart_img_one.png";
+  static const cartImgTwo = "assets/cart/cart_img_two.png";
+  static const cartImgThree = "assets/cart/cart_img_three.png";
+  static const deleteIcon = "assets/icons/trash.png";
+  static const arrowLeftIcon = "assets/icons/arrow_left.png";
+  static const addIcon = "assets/icons/plus.png";
+  static const minusIcon = "assets/icons/minus.png";
 }

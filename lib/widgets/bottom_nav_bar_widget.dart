@@ -24,30 +24,35 @@ class BottomNavBarWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return BottomNavigationBar(
         onTap: onChangeItem,
-        unselectedLabelStyle: const TextStyle(
-            fontSize: 14,
-            fontWeight: FontWeight.w400,
-            color: Color.fromARGB(255, 4, 237, 47)),
         type: BottomNavigationBarType.fixed,
         selectedLabelStyle: const TextStyle(
           color: Colors.black,
           fontSize: 14,
           fontWeight: FontWeight.w400,
         ),
-        showSelectedLabels: true,
-        showUnselectedLabels: true,
         currentIndex: selectedIndex,
-        unselectedFontSize: 14,
-        selectedFontSize: 14,
         items: List.generate(
             4,
             (index) => BottomNavigationBarItem(
-                  icon: Image.asset(
-                    bottomImageList[index]["image"]!,
-                    height: 24,
-                    width: 24,
+                  icon: Column(
+                    children: [
+                      Image.asset(
+                        bottomImageList[index]["image"]!,
+                        height: 24,
+                        width: 24,
+                      ),
+                      Text(
+                        bottomImageList[index]["label"]!,
+                        style: TextStyle(
+                            color: selectedIndex == index
+                                ? const Color(0XFF9C4400)
+                                : const Color(0XFF727272),
+                            fontSize: 14,
+                            fontWeight: FontWeight.w400),
+                      )
+                    ],
                   ),
-                  label: bottomImageList[index]["label"]!,
+                  label: '',
                 )));
   }
 }
