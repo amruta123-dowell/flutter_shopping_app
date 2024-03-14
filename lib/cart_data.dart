@@ -3,7 +3,7 @@ import 'package:flutter_shopping_assignment/utils/assets.dart';
 List<Map<String, dynamic>> cartData = [
   {
     "id": "1",
-    "name": "Neck T-Shirt with pocket",
+    "name": "Neck T-Shirt with Pocket",
     "image": AssetStrings.cartImgOne,
     "price": 400,
     "size": "M",
@@ -19,7 +19,7 @@ List<Map<String, dynamic>> cartData = [
   },
   {
     "id": "3",
-    "name": "Round-Neck T-Shirt",
+    "name": "Checked Polo T-Shirt",
     "image": AssetStrings.cartImgThree,
     "price": 750,
     "size": "M",
