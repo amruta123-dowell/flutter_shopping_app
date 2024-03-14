@@ -55,8 +55,9 @@ class CartScreen extends StatelessWidget {
             return Expanded(
               child: ListView.separated(
                 shrinkWrap: true,
-                padding:
-                    const EdgeInsets.symmetric(vertical: 16, horizontal: 16),
+                padding: const EdgeInsets.symmetric(
+                  vertical: 16,
+                ),
                 itemCount: controller.getCartList.length,
                 itemBuilder: ((context, index) {
                   return CartItemWidget(
