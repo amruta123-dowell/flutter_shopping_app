@@ -1,4 +1,4 @@
-import 'package:flutter_shopping_assignment/utils/assets.dart';
+import 'package:flutter_shopping_assignment/utils/asset_strings.dart';
 
 List<Map<String, dynamic>> cartData = [
   {

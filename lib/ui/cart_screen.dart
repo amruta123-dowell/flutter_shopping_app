@@ -4,7 +4,7 @@ import 'package:flutter_shopping_assignment/widgets/cart_item_widget.dart';
 import 'package:get/get.dart';
 
 import '../controller/cart_controller.dart';
-import '../utils/assets.dart';
+import '../utils/asset_strings.dart';
 
 class CartScreen extends StatelessWidget {
   final CartController controller = Get.put(CartController());

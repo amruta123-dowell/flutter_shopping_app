@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'package:flutter_shopping_assignment/controller/home_controller.dart';
 import 'package:flutter_shopping_assignment/extensions.dart';
-import 'package:flutter_shopping_assignment/utils/assets.dart';
+import 'package:flutter_shopping_assignment/utils/asset_strings.dart';
 import 'package:flutter_shopping_assignment/widgets/kids_cat_widget.dart';
 import 'package:get/get.dart';
 

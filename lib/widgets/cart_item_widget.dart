@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_shopping_assignment/extensions.dart';
 import 'package:flutter_shopping_assignment/models/cart_data_model.dart';
-import 'package:flutter_shopping_assignment/utils/assets.dart';
+import 'package:flutter_shopping_assignment/utils/asset_strings.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
 
 class CartItemWidget extends StatelessWidget {

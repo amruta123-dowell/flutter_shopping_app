@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_shopping_assignment/utils/assets.dart';
+import 'package:flutter_shopping_assignment/utils/asset_strings.dart';
 
 class KidsCatWidget extends StatelessWidget {
   final List<String> kidImageList = [

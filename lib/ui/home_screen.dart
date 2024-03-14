@@ -6,7 +6,7 @@ import 'package:flutter_shopping_assignment/widgets/bottom_nav_bar_widget.dart';
 import 'package:get/get.dart';
 
 import '../controller/home_controller.dart';
-import '../utils/assets.dart';
+import '../utils/asset_strings.dart';
 
 class HomeScreen extends StatelessWidget {
   final HomeController controller = Get.put(HomeController());
