@@ -45,7 +45,7 @@ class BottomNavBarWidget extends StatelessWidget {
                                 ? const Color(0XFF9C4400)
                                 : const Color(0XFF727272),
                             fontSize: 14,
-                            fontWeight: FontWeight.w400,
+                            fontWeight: FontWeight.w500,
                             height: 17.57.toFigmaHeight(14)),
                       )
                     ],
