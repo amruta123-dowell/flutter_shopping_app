@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_shopping_assignment/extensions.dart';
 
 import 'package:flutter_shopping_assignment/utils/assets.dart';
 
@@ -44,7 +45,8 @@ class BottomNavBarWidget extends StatelessWidget {
                                 ? const Color(0XFF9C4400)
                                 : const Color(0XFF727272),
                             fontSize: 14,
-                            fontWeight: FontWeight.w400),
+                            fontWeight: FontWeight.w400,
+                            height: 17.57.toFigmaHeight(14)),
                       )
                     ],
                   ),

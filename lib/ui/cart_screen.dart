@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_shopping_assignment/extensions.dart';
 import 'package:flutter_shopping_assignment/widgets/cart_item_widget.dart';
 import 'package:get/get.dart';
 
@@ -22,13 +23,14 @@ class CartScreen extends StatelessWidget {
             height: 20,
           ),
         ),
-        title: const Center(
+        title: Center(
           child: Text(
             "Shopping Cart",
             style: TextStyle(
-                color: Color(0XFF3D3D3D),
+                color: const Color(0XFF3D3D3D),
                 fontSize: 20,
-                fontWeight: FontWeight.w500),
+                fontWeight: FontWeight.w500,
+                height: 28.0.toFigmaHeight(20)),
           ),
         ),
         actions: [
@@ -98,12 +100,13 @@ class CartScreen extends StatelessWidget {
                   color: const Color(0XFF9C4400),
                 ),
                 alignment: Alignment.center,
-                child: const Text(
+                child: Text(
                   "Proceed to Checkout",
                   style: TextStyle(
-                      color: Color(0XFFFFFFFF),
+                      color: const Color(0XFFFFFFFF),
                       fontWeight: FontWeight.w400,
-                      fontSize: 16),
+                      fontSize: 16,
+                      height: 16.0.toFigmaHeight(16)),
                 ),
               ),
             ),

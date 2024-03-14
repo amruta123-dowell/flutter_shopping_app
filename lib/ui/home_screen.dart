@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_shopping_assignment/extensions.dart';
 import 'package:flutter_shopping_assignment/ui/cart_screen.dart';
 import 'package:flutter_shopping_assignment/widgets/catagory_selection_widget.dart';
 import 'package:flutter_shopping_assignment/widgets/bottom_nav_bar_widget.dart';
@@ -20,14 +21,15 @@ class HomeScreen extends StatelessWidget {
           AssetStrings.menuIcon,
           height: 20,
         ),
-        title: const Center(
+        title: Center(
           child: Text(
             "Home",
             textAlign: TextAlign.center,
             style: TextStyle(
               fontWeight: FontWeight.w500,
               fontSize: 20,
-              color: Color(0XFF3D3D3D),
+              height: (28.0).toFigmaHeight(20),
+              color: const Color(0XFF3D3D3D),
             ),
           ),
         ),
@@ -78,7 +80,7 @@ class HomeScreen extends StatelessWidget {
                     const SizedBox(
                       height: 32,
                     ),
-                    const Row(
+                    Row(
                       children: [
                         Expanded(
                           child: Text(
@@ -86,7 +88,8 @@ class HomeScreen extends StatelessWidget {
                             style: TextStyle(
                                 fontWeight: FontWeight.w400,
                                 fontSize: 16,
-                                color: Color(0XFF0A191E)),
+                                color: const Color(0XFF0A191E),
+                                height: 20.16.toFigmaHeight(16)),
                             maxLines: 1,
                             overflow: TextOverflow.ellipsis,
                           ),
@@ -95,7 +98,8 @@ class HomeScreen extends StatelessWidget {
                             style: TextStyle(
                                 fontWeight: FontWeight.w400,
                                 fontSize: 14,
-                                color: Color(0XFF9C4400))),
+                                height: (17.64).toFigmaHeight(14),
+                                color: const Color(0XFF9C4400))),
                       ],
                     ),
                     const CategorySelectionWidget(),

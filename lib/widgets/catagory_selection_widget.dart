@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:flutter_shopping_assignment/controller/home_controller.dart';
+import 'package:flutter_shopping_assignment/extensions.dart';
 import 'package:flutter_shopping_assignment/utils/assets.dart';
 import 'package:flutter_shopping_assignment/widgets/kids_cat_widget.dart';
 import 'package:get/get.dart';
@@ -112,10 +113,11 @@ class _CategoryImage extends StatelessWidget {
               ),
               child: Text(
                 categoryType,
-                style: const TextStyle(
+                style: TextStyle(
                     fontSize: 10,
                     fontWeight: FontWeight.w500,
-                    color: Color(0XFFF37807)),
+                    color: const Color(0XFFF37807),
+                    height: 12.0.toFigmaHeight(10)),
               ),
             ))
       ],

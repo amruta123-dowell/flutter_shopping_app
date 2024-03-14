@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_shopping_assignment/extensions.dart';
 import 'package:flutter_shopping_assignment/models/cart_data_model.dart';
 import 'package:flutter_shopping_assignment/utils/assets.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
@@ -73,19 +74,21 @@ class CartItemWidget extends StatelessWidget {
                     children: [
                       Text(
                         itemModel.name,
-                        style: const TextStyle(
-                            color: Color(0XFF3D3D3D),
+                        style: TextStyle(
+                            color: const Color(0XFF3D3D3D),
                             fontSize: 16,
-                            fontWeight: FontWeight.w400),
+                            fontWeight: FontWeight.w400,
+                            height: 22.0.toFigmaHeight(16)),
                         overflow: TextOverflow.ellipsis,
                         maxLines: 1,
                       ),
                       Text(
                         "Size: ${itemModel.size}",
-                        style: const TextStyle(
-                            color: Color(0XFF8F8F8F),
+                        style: TextStyle(
+                            color: const Color(0XFF8F8F8F),
                             fontSize: 14,
-                            fontWeight: FontWeight.w400),
+                            fontWeight: FontWeight.w400,
+                            height: 17.64.toFigmaHeight(14)),
                       ),
                       const SizedBox(
                         height: 12,
@@ -95,11 +98,11 @@ class CartItemWidget extends StatelessWidget {
                           Expanded(
                             child: Text(
                               "\u{20B9} ${itemModel.price}",
-                              style: const TextStyle(
-                                color: Color(0XFF4C4C4C),
-                                fontSize: 20,
-                                fontWeight: FontWeight.w500,
-                              ),
+                              style: TextStyle(
+                                  color: const Color(0XFF4C4C4C),
+                                  fontSize: 20,
+                                  fontWeight: FontWeight.w500,
+                                  height: 25.2.toFigmaHeight(20)),
                             ),
                           ),
                           Container(
@@ -136,10 +139,11 @@ class CartItemWidget extends StatelessWidget {
                                       const EdgeInsets.symmetric(horizontal: 2),
                                   child: Text(
                                     "${itemModel.quantity}",
-                                    style: const TextStyle(
-                                        color: Color(0XFF000000),
+                                    style: TextStyle(
+                                        color: const Color(0XFF000000),
                                         fontSize: 16,
-                                        fontWeight: FontWeight.w400),
+                                        fontWeight: FontWeight.w400,
+                                        height: 20.16.toFigmaHeight(16)),
                                     maxLines: 1,
                                     overflow: TextOverflow.ellipsis,
                                   ),
