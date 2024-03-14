@@ -54,31 +54,31 @@ class HomeScreen extends StatelessWidget {
             color: const Color(0XFFD9D9D9),
           ),
           Expanded(
-            child: SingleChildScrollView(
-              padding: EdgeInsets.zero,
-              child: Column(
-                children: [
-                  Container(
-                    height: 200,
-                    width: double.infinity,
-                    margin: const EdgeInsets.only(top: 12, left: 16, right: 16),
-                    child: ClipRRect(
-                      borderRadius: BorderRadius.circular(16),
-                      child: Image.asset(
-                        AssetStrings.bannerImage,
-                        fit: BoxFit.fitWidth,
-                        height: 200,
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 16),
+              child: SingleChildScrollView(
+                padding: EdgeInsets.zero,
+                child: Column(
+                  children: [
+                    const SizedBox(
+                      height: 12,
+                    ),
+                    SizedBox(
+                      height: 200,
+                      width: double.infinity,
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(16),
+                        child: Image.asset(
+                          AssetStrings.bannerImage,
+                          fit: BoxFit.fitWidth,
+                          height: 200,
+                        ),
                       ),
                     ),
-                  ),
-                  const SizedBox(
-                    height: 32,
-                  ),
-                  const Padding(
-                    padding: EdgeInsets.symmetric(
-                      horizontal: 20,
+                    const SizedBox(
+                      height: 32,
                     ),
-                    child: Row(
+                    const Row(
                       children: [
                         Expanded(
                           child: Text(
@@ -98,10 +98,10 @@ class HomeScreen extends StatelessWidget {
                                 color: Color(0XFF9C4400))),
                       ],
                     ),
-                  ),
-                  const CategorySelectionWidget(),
-                  const SizedBox(height: 30),
-                ],
+                    const CategorySelectionWidget(),
+                    const SizedBox(height: 30),
+                  ],
+                ),
               ),
             ),
           ),

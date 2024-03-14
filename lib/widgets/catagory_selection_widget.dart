@@ -11,57 +11,54 @@ class CategorySelectionWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetBuilder<HomeController>(builder: (controller) {
-      return Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 16),
-        child: Stack(
-          children: [
-            ListView(
-              padding: const EdgeInsets.only(top: 20),
-              shrinkWrap: true,
-              physics: const NeverScrollableScrollPhysics(),
-              children: [
-                InkWell(
-                  onTap: () {
-                    controller.selectedCategory(1);
-                  },
-                  child: _CategoryImage(
-                      opacity: controller.isSelectedCat &&
-                              controller.selectedIndex == 1
-                          ? 1
-                          : 0.1,
-                      image: AssetStrings.womenCatIcon,
-                      categoryType: "Women"),
-                ),
-                const SizedBox(
-                  height: 4,
-                ),
-                InkWell(
-                  onTap: () {
-                    controller.selectedCategory(2);
-                  },
-                  child: _CategoryImage(
+      return Stack(
+        children: [
+          ListView(
+            padding: const EdgeInsets.only(top: 20),
+            shrinkWrap: true,
+            physics: const NeverScrollableScrollPhysics(),
+            children: [
+              InkWell(
+                onTap: () {
+                  controller.selectedCategory(1);
+                },
+                child: _CategoryImage(
                     opacity: controller.isSelectedCat &&
-                            controller.selectedIndex == 2
+                            controller.selectedIndex == 1
                         ? 1
                         : 0.1,
-                    image: AssetStrings.menCatIcon,
-                    categoryType: "Men",
-                    boxFit: BoxFit.fitWidth,
-                  ),
+                    image: AssetStrings.womenCatIcon,
+                    categoryType: "Women"),
+              ),
+              const SizedBox(
+                height: 4,
+              ),
+              InkWell(
+                onTap: () {
+                  controller.selectedCategory(2);
+                },
+                child: _CategoryImage(
+                  opacity:
+                      controller.isSelectedCat && controller.selectedIndex == 2
+                          ? 1
+                          : 0.1,
+                  image: AssetStrings.menCatIcon,
+                  categoryType: "Men",
+                  boxFit: BoxFit.fitWidth,
                 ),
-              ],
-            ),
-            Align(
-              alignment: Alignment.bottomRight,
-              child: Container(
-                  padding: const EdgeInsets.only(right: 12, top: 32),
-                  width: MediaQuery.sizeOf(context).width - 300 / 2,
-                  child: KidsCatWidget(
-                    enableOtherCategory: controller.isSelectedCat,
-                  )),
-            )
-          ],
-        ),
+              ),
+            ],
+          ),
+          Align(
+            alignment: Alignment.bottomRight,
+            child: Container(
+                padding: const EdgeInsets.only(right: 12, top: 32),
+                width: MediaQuery.sizeOf(context).width - 300 / 2,
+                child: KidsCatWidget(
+                  enableOtherCategory: controller.isSelectedCat,
+                )),
+          )
+        ],
       );
     });
   }

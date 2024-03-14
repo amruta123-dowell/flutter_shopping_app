@@ -127,8 +127,10 @@ class CartItemWidget extends StatelessWidget {
                                   ),
                                 ),
                               ),
-                              Padding(
-                                padding:
+                              Container(
+                                width: 24,
+                                alignment: Alignment.center,
+                                margin:
                                     const EdgeInsets.symmetric(horizontal: 2),
                                 child: Text(
                                   "${itemModel.quantity}",
@@ -136,6 +138,8 @@ class CartItemWidget extends StatelessWidget {
                                       color: Color(0XFF000000),
                                       fontSize: 16,
                                       fontWeight: FontWeight.w400),
+                                  maxLines: 1,
+                                  overflow: TextOverflow.ellipsis,
                                 ),
                               ),
                               InkWell(
