@@ -14,9 +14,7 @@ class HomeController extends GetxController {
 
 //on click image - used to change the opacity of category image.
   selectedCategory(int index) {
-    int tempIndex = index;
-
-    if (selectedIndex != tempIndex) {
+    if (selectedIndex != index) {
       isSelectedCat = true;
     } else {
       isSelectedCat = !isSelectedCat;

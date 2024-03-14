@@ -72,11 +72,11 @@ class HomeScreen extends StatelessWidget {
                     ),
                   ),
                   const SizedBox(
-                    height: 30,
+                    height: 32,
                   ),
                   const Padding(
                     padding: EdgeInsets.symmetric(
-                      horizontal: 24,
+                      horizontal: 20,
                     ),
                     child: Row(
                       children: [

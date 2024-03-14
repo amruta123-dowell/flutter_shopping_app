@@ -33,7 +33,7 @@ class CategorySelectionWidget extends StatelessWidget {
                       categoryType: "Women"),
                 ),
                 const SizedBox(
-                  height: 8,
+                  height: 4,
                 ),
                 InkWell(
                   onTap: () {

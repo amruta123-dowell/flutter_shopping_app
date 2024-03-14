@@ -55,7 +55,8 @@ class CartScreen extends StatelessWidget {
             return Expanded(
               child: ListView.separated(
                 shrinkWrap: true,
-                padding: const EdgeInsets.symmetric(vertical: 15),
+                padding:
+                    const EdgeInsets.symmetric(vertical: 16, horizontal: 16),
                 itemCount: controller.getCartList.length,
                 itemBuilder: ((context, index) {
                   return CartItemWidget(
@@ -73,22 +74,21 @@ class CartScreen extends StatelessWidget {
                 }),
                 separatorBuilder: (BuildContext context, int index) {
                   return const SizedBox(
-                    height: 10,
+                    height: 16,
                   );
                 },
               ),
             );
           }),
-          InkWell(
-            onTap: () {},
-            child: Container(
-              decoration: BoxDecoration(boxShadow: [
-                BoxShadow(
-                    color: const Color(0xFF000000).withOpacity(0.04),
-                    blurRadius: 22,
-                    offset: const Offset(0, -6)),
-              ]),
-              padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 20),
+          Container(
+            decoration: BoxDecoration(boxShadow: [
+              BoxShadow(
+                  color: const Color(0xFF000000).withOpacity(0.04),
+                  blurRadius: 22,
+                  offset: const Offset(0, -6)),
+            ]),
+            padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+            child: InkWell(
               child: Container(
                 width: double.infinity,
                 height: 48,
@@ -108,7 +108,7 @@ class CartScreen extends StatelessWidget {
             ),
           ),
           const SizedBox(
-            height: 40,
+            height: 20,
           )
         ],
       ),

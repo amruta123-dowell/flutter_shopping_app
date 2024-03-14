@@ -24,7 +24,6 @@ class KidsCatWidget extends StatelessWidget {
           mainAxisSpacing: 12,
           crossAxisSpacing: 12,
           childAspectRatio: 1.2,
-          scrollDirection: Axis.vertical,
           children: kidImageList.map((String value) {
             return Container(
                 decoration:
@@ -34,7 +33,6 @@ class KidsCatWidget extends StatelessWidget {
                   child: Image.asset(
                     value,
                     fit: BoxFit.fill,
-                    height: 25,
                   ),
                 ));
           }).toList(),

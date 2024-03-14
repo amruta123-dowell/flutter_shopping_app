@@ -17,150 +17,149 @@ class CartItemWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      margin: const EdgeInsets.symmetric(horizontal: 16),
-      child: Slidable(
-          key: UniqueKey(),
-          endActionPane: ActionPane(
-              motion: const ScrollMotion(),
-              extentRatio: 0.3,
-              children: [
-                Expanded(
-                  child: InkWell(
-                    onTap: () {
-                      onClickDelete();
-                    },
-                    child: Container(
-                        height: double.infinity,
-                        decoration: BoxDecoration(
-                          color: const Color(0XFFE03A3E).withOpacity(0.1),
-                        ),
-                        child: Image.asset(
-                          AssetStrings.deleteIcon,
-                        )),
-                  ),
-                )
-              ]),
-          child: Container(
-            padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
-            decoration: BoxDecoration(
-                color: const Color(0XFFFFFFFF),
-                borderRadius: BorderRadius.circular(12),
-                boxShadow: [
-                  BoxShadow(
-                      color: const Color(0XFF000000).withOpacity(0.05),
-                      blurRadius: 6,
-                      offset: const Offset(0, 4)),
-                ]),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.start,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                ClipRRect(
-                  borderRadius: BorderRadius.circular(12),
-                  child: Image.asset(
-                    itemModel.image,
-                    fit: BoxFit.cover,
-                    height: 88,
-                    width: 88,
-                  ),
+    return Slidable(
+        key: UniqueKey(),
+        endActionPane: ActionPane(
+            motion: const ScrollMotion(),
+            extentRatio: 0.3,
+            children: [
+              Expanded(
+                child: InkWell(
+                  onTap: () {
+                    onClickDelete();
+                  },
+                  child: Container(
+                      height: double.infinity,
+                      decoration: BoxDecoration(
+                        color: const Color(0XFFE03A3E).withOpacity(0.1),
+                      ),
+                      child: Image.asset(
+                        AssetStrings.deleteIcon,
+                      )),
                 ),
-                const SizedBox(width: 16),
-                Expanded(
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        itemModel.name,
-                        style: const TextStyle(
-                            color: Color(0XFF3D3D3D),
-                            fontSize: 16,
-                            fontWeight: FontWeight.w400),
-                        overflow: TextOverflow.ellipsis,
-                        maxLines: 1,
-                      ),
-                      Text(
-                        "Size: ${itemModel.size}",
-                        style: const TextStyle(
-                            color: Color(0XFF8F8F8F),
-                            fontSize: 14,
-                            fontWeight: FontWeight.w400),
-                      ),
-                      const SizedBox(
-                        height: 12,
-                      ),
-                      Row(
-                        children: [
-                          Expanded(
-                            child: Text(
-                              "\u{20B9} ${itemModel.price}",
-                              style: const TextStyle(
-                                color: Color(0XFF4C4C4C),
-                                fontSize: 20,
-                                fontWeight: FontWeight.w500,
-                              ),
+              )
+            ]),
+        child: Container(
+          padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+          decoration: BoxDecoration(
+              color: const Color(0XFFFFFFFF),
+              borderRadius: BorderRadius.circular(12),
+              boxShadow: [
+                BoxShadow(
+                    color: const Color(0XFF000000).withOpacity(0.05),
+                    blurRadius: 6,
+                    offset: const Offset(0, 4)),
+              ]),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              ClipRRect(
+                borderRadius: BorderRadius.circular(12),
+                child: Image.asset(
+                  itemModel.image,
+                  fit: BoxFit.cover,
+                  height: 88,
+                  width: 88,
+                ),
+              ),
+              const SizedBox(width: 16),
+              Expanded(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      itemModel.name,
+                      style: const TextStyle(
+                          color: Color(0XFF3D3D3D),
+                          fontSize: 16,
+                          fontWeight: FontWeight.w400),
+                      overflow: TextOverflow.ellipsis,
+                      maxLines: 1,
+                    ),
+                    Text(
+                      "Size: ${itemModel.size}",
+                      style: const TextStyle(
+                          color: Color(0XFF8F8F8F),
+                          fontSize: 14,
+                          fontWeight: FontWeight.w400),
+                    ),
+                    const SizedBox(
+                      height: 12,
+                    ),
+                    Row(
+                      children: [
+                        Expanded(
+                          child: Text(
+                            "\u{20B9} ${itemModel.price}",
+                            style: const TextStyle(
+                              color: Color(0XFF4C4C4C),
+                              fontSize: 20,
+                              fontWeight: FontWeight.w500,
                             ),
                           ),
-                          Container(
-                            height: 40,
-                            width: 100,
-                            padding: const EdgeInsets.symmetric(
-                                horizontal: 2, vertical: 4),
-                            decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(8),
-                                border:
-                                    Border.all(color: const Color(0XFFF0F0F0))),
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceAround,
-                              crossAxisAlignment: CrossAxisAlignment.center,
-                              children: [
-                                InkWell(
-                                  onTap: () {
-                                    onClickDecrement();
-                                  },
-                                  child: SizedBox(
-                                    width: 30,
-                                    child: Image.asset(
-                                      AssetStrings.minusIcon,
-                                      height: 16,
-                                    ),
+                        ),
+                        Container(
+                          height: 40,
+                          width: 100,
+                          padding: const EdgeInsets.symmetric(
+                              horizontal: 2, vertical: 4),
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(8),
+                              border: Border.all(
+                                color: const Color(0XFFF0F0F0),
+                                width: 1,
+                              )),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceAround,
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: [
+                              InkWell(
+                                onTap: () {
+                                  onClickDecrement();
+                                },
+                                child: SizedBox(
+                                  width: 30,
+                                  child: Image.asset(
+                                    AssetStrings.minusIcon,
+                                    height: 16,
                                   ),
                                 ),
-                                Padding(
-                                  padding:
-                                      const EdgeInsets.symmetric(horizontal: 2),
-                                  child: Text(
-                                    "${itemModel.quantity}",
-                                    style: const TextStyle(
-                                        color: Color(0XFF000000),
-                                        fontSize: 16,
-                                        fontWeight: FontWeight.w400),
+                              ),
+                              Padding(
+                                padding:
+                                    const EdgeInsets.symmetric(horizontal: 2),
+                                child: Text(
+                                  "${itemModel.quantity}",
+                                  style: const TextStyle(
+                                      color: Color(0XFF000000),
+                                      fontSize: 16,
+                                      fontWeight: FontWeight.w400),
+                                ),
+                              ),
+                              InkWell(
+                                onTap: () {
+                                  onClickIncrement();
+                                },
+                                child: SizedBox(
+                                  width: 30,
+                                  child: Image.asset(
+                                    AssetStrings.addIcon,
+                                    height: 16,
                                   ),
                                 ),
-                                InkWell(
-                                  onTap: () {
-                                    onClickIncrement();
-                                  },
-                                  child: SizedBox(
-                                    width: 30,
-                                    child: Image.asset(
-                                      AssetStrings.addIcon,
-                                      height: 16,
-                                    ),
-                                  ),
-                                ),
-                              ],
-                            ),
-                          )
-                        ],
-                      )
-                    ],
-                  ),
+                              ),
+                            ],
+                          ),
+                        )
+                      ],
+                    )
+                  ],
                 ),
-              ],
-            ),
-          )),
-    );
+              ),
+            ],
+          ),
+        ));
   }
 }
